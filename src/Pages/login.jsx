@@ -25,7 +25,7 @@ const LoginSignupPage = () => {
   return (
     <div className="main">
     <div className="main_container">
-      <h1>{isLogin ? "Login" : "Signup"}</h1>
+      <h1 id="Lgn">{isLogin ? "Login" : "Signup"}</h1>
       <form id="form" onSubmit={handleSubmit}>
         <label id="email">
           Email:
