@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './login.css'
 const LoginSignupPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,31 +23,34 @@ const LoginSignupPage = () => {
   };
 
   return (
-    <div>
+    <div className="main">
+    <div className="main_container">
       <h1>{isLogin ? "Login" : "Signup"}</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <form id="form" onSubmit={handleSubmit}>
+        <label id="email">
           Email:
-          <input type="email" value={email} onChange={handleEmailChange} />
+          <input className="background" type="email" value={email} onChange={handleEmailChange} />
         </label>
         <br />
-        <label>
+        <label id="passward">
           Password:
           <input
+          className="background"
             type="password"
             value={password}
             onChange={handlePasswordChange}
           />
         </label>
         <br />
-        <button type="submit">{isLogin ? "Login" : "Signup"}</button>
+        <button  id="submitbtn" type="submit">{isLogin ? "Login" : "Signup"}</button>
       </form>
       <p>
         {isLogin ? "Don't have an account yet?" : "Already have an account?"}{" "}
-        <button type="button" onClick={handleToggle}>
+        <button id="signup_btn" type="button" onClick={handleToggle}>
           {isLogin ? "Signup" : "Login"}
         </button>
       </p>
+    </div>
     </div>
   );
 };

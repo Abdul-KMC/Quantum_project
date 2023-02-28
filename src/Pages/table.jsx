@@ -1,4 +1,5 @@
 import React from "react";
+import './table.css'
 
 function Table() {
   const data = [
@@ -6,41 +7,41 @@ function Table() {
       id: 1,
       sNo: 1,
       name: "John Doe",
-      dateCreated: "2022-02-10",
-      role: "Developer",
-      status: "Active",
+      dateOfBirth: "1997-02-10",
+      email: "John123@gmail.com",
+      Password: "........",
       action: "Edit",
     },
     {
       id: 2,
       sNo: 2,
       name: "Jane Doe",
-      dateCreated: "2022-02-11",
-      role: "Designer",
-      status: "Inactive",
+      dateOfBirth: "1991-02-10",
+      email: "Jahn123@gmail.com",
+      Password: "........",
       action: "Delete",
     },
     {
       id: 3,
       sNo: 3,
       name: "Bob Smith",
-      dateCreated: "2022-02-12",
-      role: "Manager",
-      status: "Active",
+      dateOfBirth: "2000-02-10",
+      email: "Bob123@gmail.com",
+      Password: "........",
       action: "Edit",
     },
     // add more data as needed
   ];
 
   return (
-    <table>
+    <table className="DataTable">
       <thead>
         <tr>
           <th>S.no.</th>
           <th>Name</th>
-          <th>Date Created</th>
-          <th>Role</th>
-          <th>Status</th>
+          <th>Date of Birth</th>
+          <th>Email</th>
+          <th>Password</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -49,9 +50,9 @@ function Table() {
           <tr key={item.id}>
             <td>{item.sNo}</td>
             <td>{item.name}</td>
-            <td>{item.dateCreated}</td>
-            <td>{item.role}</td>
-            <td>{item.status}</td>
+            <td>{item.dateOfBirth}</td>
+            <td>{item.email}</td>
+            <td>{item.Password}</td>
             <td>{item.action}</td>
           </tr>
         ))}
