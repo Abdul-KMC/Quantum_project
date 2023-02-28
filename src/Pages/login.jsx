@@ -42,6 +42,12 @@ const LoginSignupPage = () => {
         <br />
         <button type="submit">{isLogin ? "Login" : "Signup"}</button>
       </form>
+      <p>
+        {isLogin ? "Don't have an account yet?" : "Already have an account?"}{" "}
+        <button type="button" onClick={handleToggle}>
+          {isLogin ? "Signup" : "Login"}
+        </button>
+      </p>
     </div>
   );
 };
