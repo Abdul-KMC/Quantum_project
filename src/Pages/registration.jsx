@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './registeration.css'
 const RegistrationPage = () => {
   const [name, setName] = useState("");
   const [dob, setDob] = useState("");
@@ -28,35 +28,38 @@ const RegistrationPage = () => {
   };
 
   return (
-    <div>
+    <div className="main">
+      <div className="main_container">
       <h1>Registration</h1>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label id="name">
           Name:
-          <input type="text" value={name} onChange={handleNameChange} />
+          <input className="background" type="text" value={name} onChange={handleNameChange} />
         </label>
         <br />
-        <label>
+        <label id="dob">
           Date of Birth:
-          <input type="date" value={dob} onChange={handleDobChange} />
+          <input className="background" type="date" value={dob} onChange={handleDobChange} />
         </label>
         <br />
-        <label>
+        <label id="email">
           Email:
-          <input type="email" value={email} onChange={handleEmailChange} />
+          <input className="background" type="email" value={email} onChange={handleEmailChange} />
         </label>
         <br />
-        <label>
+        <label id="passward">
           Password:
           <input
+          className="background"
             type="password"
             value={password}
             onChange={handlePasswordChange}
           />
         </label>
         <br />
-        <button type="submit">Register</button>
+        <button id="registrer_btn" type="submit">Register</button>
       </form>
+    </div>
     </div>
   );
 };
