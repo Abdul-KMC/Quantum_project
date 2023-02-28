@@ -30,7 +30,7 @@ const RegistrationPage = () => {
   return (
     <div className="main">
       <div className="main_container">
-      <h1>Registration</h1>
+      <h1 id="Reg">Registration</h1>
       <form onSubmit={handleSubmit}>
         <label id="name">
           Name:
