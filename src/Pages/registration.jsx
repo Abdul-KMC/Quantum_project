@@ -15,10 +15,11 @@ const RegistrationPage = () => {
     console.log(data);
 
     axios
-      .post("https://quantum-backend.vercel.app/api/user ", data)
+      .post("https://quantum-backend-kw19l296s-abdul-kmc.vercel.app/api/user", data)
       .then((response) => {
         console.log(response);
-        // event.target.reset();
+         event.target.reset();
+
       })
       .catch((error) => {
         console.log(error);
