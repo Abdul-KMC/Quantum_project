@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./registeration.css";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const RegistrationPage = () => {
@@ -9,97 +8,78 @@ const RegistrationPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const handleDobChange = (event) => {
-    setDob(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
   const handleSubmit = (event) => {
-    console.log("check");
     event.preventDefault();
-    const name = event.target.name.value;
-    console.log(name);
-    const DateOfBirth = event.target.DateOfBirth.value;
-    const email = event.target.email.value;
-    const password = event.target.password.value;
+    console.log(event.target);
     const data = { name, DateOfBirth, email, password };
-    console.log (data);
+    console.log(data);
+
     axios
-      .post("https://quantum-backend.vercel.app/api/user ", data)
+      .post("https://quantum-backend-kw19l296s-abdul-kmc.vercel.app/api/user", data)
       .then((response) => {
         console.log(response);
-        event.target.reset();
+         event.target.reset();
       })
       .catch((error) => {
         console.log(error);
       });
-
-    // code for handling registration logic
   };
-
-  // const navigate = useNavigate();
-  // function handleRegister(event) {
-  //   event.preventDefault();
-  //   navigate("/login");
-  // }
 
   return (
     <div className="main">
       <div className="main_container">
         <h1 id="Reg">Registration</h1>
-        <form >
+
+        <form onSubmit={handleSubmit}>
           <label id="name">
             Name:
             <input
               className="background"
               type="text"
               value={name}
-              onChange={handleNameChange}
+              onChange={(e) => setName(e.target.value)}
             />
           </label>
+
           <br />
+
           <label id="DateOfBirth">
             DateOfBirth:
             <input
               className="background"
               type="date"
               value={DateOfBirth}
-              onChange={handleDobChange}
+              onChange={(e) => setDob(e.target.value)}
             />
           </label>
+
           <br />
+
           <label id="email">
             Email:
             <input
               className="background"
               type="email"
               value={email}
-              onChange={handleEmailChange}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </label>
+
           <br />
+
           <label id="passward">
             Password:
             <input
               className="background"
               type="password"
               value={password}
-              onChange={handlePasswordChange}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </label>
+
           <br />
-          <button id="registrer_btn" type="submit" onClick={handleSubmit}>
+
+          <button id="registrer_btn" type="submit">
             Register
           </button>
         </form>
