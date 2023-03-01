@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import './login.css'
+import './login.css';
+import { useNavigate } from "react-router-dom";
 const LoginSignupPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin] = useState(true);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -13,9 +14,15 @@ const LoginSignupPage = () => {
     setPassword(event.target.value);
   };
 
-  const handleToggle = () => {
-    setIsLogin(!isLogin);
-  };
+  // function handleClick() {
+  //   let history = useHistory();
+  //   history.push(<Link className="to-registration" to="/registration"></Link>);
+  // }
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/registration`;
+    navigate(path);
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,7 +53,7 @@ const LoginSignupPage = () => {
       </form>
       <p>
         {isLogin ? "Don't have an account yet?" : "Already have an account?"}{" "}
-        <button id="signup_btn" type="button" onClick={handleToggle}>
+        <button id="signup_btn" type="button" onClick={routeChange}>
           {isLogin ? "Signup" : "Login"}
         </button>
       </p>

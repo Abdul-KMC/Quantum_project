@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './registeration.css'
+import './registeration.css';
+import { useNavigate } from 'react-router-dom';
 const RegistrationPage = () => {
   const [name, setName] = useState("");
   const [dob, setDob] = useState("");
@@ -26,6 +27,12 @@ const RegistrationPage = () => {
     event.preventDefault();
     // code for handling registration logic
   };
+
+  const navigate = useNavigate();
+  function handleRegister(event) {
+    event.preventDefault();
+    navigate('/login');
+  }
 
   return (
     <div className="main">
@@ -57,7 +64,8 @@ const RegistrationPage = () => {
           />
         </label>
         <br />
-        <button id="registrer_btn" type="submit">Register</button>
+        <button id="registrer_btn" type="submit" onClick={handleRegister}>Register
+        </button>
       </form>
     </div>
     </div>
