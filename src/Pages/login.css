@@ -1,5 +1,7 @@
 .main {
-    background-color: #00959C;
+
+    background-image:linear-gradient(#07d1dc,) ;
+
     width: 100%;
     height: 100%;
 }
