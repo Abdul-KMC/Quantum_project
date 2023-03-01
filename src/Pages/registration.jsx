@@ -19,6 +19,7 @@ const RegistrationPage = () => {
       .then((response) => {
         console.log(response);
          event.target.reset();
+
       })
       .catch((error) => {
         console.log(error);
